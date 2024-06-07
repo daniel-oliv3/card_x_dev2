@@ -1,0 +1,70 @@
+body {
+    font-family: 'Outfit', sans-serif;
+    background-image: url('../img/fundo-base.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh; /*altura da janela de navegacao*/
+}
+
+.cabecalho {
+    /* background-color: red; */
+    text-align: center;
+    padding: 60px 0;
+}
+
+.cabecalho h1 {
+    color: #f1ecff;
+    font-size: 45px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.personagens-slider {
+    background-color: blue;
+    display: flex;
+    /*flex-direction: row;*/ /*padrão do flex*/
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /*espaçamento entre os filhos*/
+}
+
+.lista-personagens {
+    background-color: orange;
+    width: 330px; /*largura*/
+    height: 520px; /*altura*/
+}
+
+.btn-seta {
+    background-color: #ffffff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-seta.btn-voltar {
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
