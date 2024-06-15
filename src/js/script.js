@@ -17,11 +17,11 @@ btnAvancar.addEventListener("click", function (){
     // console.log(cartoes.length - 1);
     // console.log(cartaoAtual === cartoes.length - 1);
     
-    if(cartaoAtual === cartoes.length - 1) return;
+    const ehUltimoCartao = cartaoAtual === cartoes.length - 1;
+    if(ehUltimoCartao) return;
 
     // passo 4 - buscar o cartão que esta selecionado e esconder
-    const cartaoSelecionado = document.querySelector(".selecionado");
-    cartaoSelecionado.classList.remove("selecionado");
+    esconderCartaoSelecionado();
 
     // passo 3 - fazer aparecer o próximo cartão da lista, colocando a classe selecionado nele
     // const cartoes = document.querySelectorAll(".cartao");
@@ -30,10 +30,7 @@ btnAvancar.addEventListener("click", function (){
     cartaoAtual++;
     // console.log(cartaoAtual);
     // console.log(cartoes[cartaoAtual]);
-    cartoes[cartaoAtual].classList.add("selecionado");
-
-
-
+    mostrarCartao();
 });
 
 
@@ -43,31 +40,31 @@ anterior da lista */
 // passo 2 - dar um jeito de identificar o clique do usuário na seta voltar
 btnVoltar.addEventListener("click", function (){
 
-    console.log(cartaoAtual);
-    if(cartaoAtual === 0) return;
+    const ehPrimeiroCartao = cartaoAtual === 0; 
+
+    // console.log(cartaoAtual);
+    if(ehPrimeiroCartao) return;
 
     // passo 4 - buscar o cartão que esta selecionado e esconder
-    const cartaoSelecionado = document.querySelector(".selecionado");
-    cartaoSelecionado.classList.remove("selecionado");
+    esconderCartaoSelecionado();
 
     // passo 3 - fazer aparecer o cartão anterior da lista
     cartaoAtual--;
-    cartoes[cartaoAtual].classList.add("selecionado");
+    mostrarCartao();
 });
 
 
 
 
 
+function mostrarCartao() {
+    cartoes[cartaoAtual].classList.add("selecionado");
+}
 
-
-
-
-
-
-
-
-
+function esconderCartaoSelecionado() {
+    const cartaoSelecionado = document.querySelector(".selecionado");
+    cartaoSelecionado.classList.remove("selecionado");
+}
 
 
 /**/
@@ -92,7 +89,6 @@ passo 1 - dar um jeito de pegar o elemento HTML da seta voltar
 passo 2 - dar um jeito de identificar o clique do usuário na seta voltar
 passo 3 - fazer aparecer o cartão anterior da lista
 passo 4 - buscar o cartão que esta selecionado e esconder
-
 */
 
 
